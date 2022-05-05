@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/
+hooks:
+  BeforeInstall: 
+    - location: depend.sh
+      timeout: 300
+  AfterInstall:
+    - location: config.sh
+      timeout: 300
+  #ApplicationStart:
+   # - location: start.sh
+     # timeout: 200
